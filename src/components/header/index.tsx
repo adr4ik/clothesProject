@@ -9,35 +9,35 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import LogoIcon from "@/lib/icons/logo";
+import RusFlagIcon from "@/lib/icons/rus-flag";
+import CartIcon from "@/lib/icons/cart";
+import Link from "next/link";
+import NotFoundPage from "../notFoundPage";
 
 export default function Header() {
   return (
-    <header>
-      <div className=" flex flex-col gap-7 mt-3">
-        <div className=" flex justify-between px-32">
+    <>
+      <div className="  bg-[#F5F6F8]">
+        <div className="flex justify-between max-w-[1170px] mx-auto px-3  py-3">
           <a href="#" className=" outline-none">
             ул.Московская 129
           </a>
-          <div className=" flex gap-2 hover:cursor-pointer hover:border">
-            <Image
-              src="/images/language.png"
-              width={40}
-              height={24}
-              alt="language"
-            />
+          <div className=" flex gap-2 hover:cursor-pointer">
+            <RusFlagIcon />
             <p>Rus</p>
           </div>
         </div>
-        <div className=" flex justify-between items-center px-32">
-          <nav className=" flex gap-6 font-medium text-sm  max-w-1170:hidden">
-            <a href="#" className="">
-              Категории
-            </a>
-            <a href="#">Покупателям</a>
-            <a href="#">Бренд</a>
-            <a href="#">Блог</a>
+      </div>
+      <header className=" sticky top-0 z-50">
+        <div className=" flex justify-between items-center max-w-[1170px] mx-auto px-3 h-[72px]">
+          <nav className=" flex gap-6 font-medium text-sm  max-[870px]:hidden">
+            <Link href="/notFountPage">Категории </Link>
+            <Link href="#">Покупателям</Link>
+            <Link href="#">Бренд</Link>
+            <Link href="/blogPage">Блог</Link>
           </nav>
-          <div className=" hidden  max-w-1170:flex">
+          <div className=" min-[870px]:hidden flex">
             {" "}
             <DropdownMenu>
               <DropdownMenuTrigger>
@@ -63,18 +63,15 @@ export default function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className=" flex items-center gap-14">
+          <div className=" flex items-center gap-14 h-full">
             <div>
-              <Image
-                src="/images/riera.png"
-                alt="riera"
-                width={101}
-                height={34.4}
-              />
+              <Link href="/">
+                <LogoIcon />
+              </Link>
             </div>
           </div>
-          <div className=" flex gap-6 items-center">
-            <div className=" flex items-center max-w-680:hidden">
+          <div className=" flex items-center h-full">
+            <div className=" flex items-center max-[530px]:hidden border-l border-[#EEEEEE] pl-4">
               <Image
                 src="/images/search.png"
                 alt="search"
@@ -84,31 +81,22 @@ export default function Header() {
               <input
                 type="text"
                 placeholder="Search..."
-                className=" text-[18px] "
+                className=" text-lg h-full outline-none px-4"
               />
             </div>
-            <div className=" flex gap-5 max-w-680:hidden">
-              <Image
-                src="/images/bag.png"
-                alt="icon"
-                width={24}
-                height={24}
-                className="hover:cursor-pointer hover:border"
-              />
-              <Image
-                src="/images/heart.png"
-                alt="icon"
-                width={24}
-                height={24}
-                className="hover:cursor-pointer hover:border"
-              />
-              <Image
-                src="/images/human.png"
-                alt="icon"
-                width={24}
-                height={24}
-                className="hover:cursor-pointer hover:border"
-              />
+            <div className=" flex  h-full items-center">
+              <div className=" h-full w-[72px] flex items-center justify-center border-l border-[#EEEEEE] border-r cursor-pointer hover:bg-[#F5F6F8] transition-all">
+                <CartIcon />
+              </div>
+
+              <div className=" h-full w-[72px] flex items-center justify-center border-r border-[#EEEEEE] cursor-pointer hover:bg-[#F5F6F8] transition-all">
+                <Image
+                  src="/images/human.png"
+                  alt="icon"
+                  width={24}
+                  height={24}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -117,7 +105,7 @@ export default function Header() {
             Скидки будут всю весну ! ! !
           </h3>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

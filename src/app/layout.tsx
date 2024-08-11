@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import NotFoundPage from "@/components/notFoundPage";
 
 const raleway = Raleway({
   subsets: ["latin", "cyrillic", "cyrillic-ext", "vietnamese"],
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={raleway.className}>
         <Header />
+
         {children}
         <Footer />
       </body>

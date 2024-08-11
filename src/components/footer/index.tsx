@@ -8,11 +8,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 export default function Footer() {
   return (
     <footer className=" mt-24">
-      <section className=" max-w-1170:hidden">
+      <section className=" max-[880px]:hidden">
         <div>
           <h2 className=" text-center text-[32px] font-medium">
             Еще больше в наших соц сетях
@@ -37,12 +43,48 @@ export default function Footer() {
           </button>
         </div>
         <div className=" flex flex-wrap mt-5 items-center justify-center">
-          <Image src="/images/Footer1.png" alt="f1" width={240} height={240} />
-          <Image src="/images/Footer2.png" alt="f2" width={240} height={240} />
-          <Image src="/images/Footer3.png" alt="f3" width={240} height={240} />
-          <Image src="/images/Footer4.png" alt="f4" width={240} height={240} />
-          <Image src="/images/Footer5.png" alt="f5" width={240} height={240} />
-          <Image src="/images/Footer6.png" alt="f6" width={240} height={240} />
+          <Image
+            src="/images/Footer1.png"
+            alt="f1"
+            width={240}
+            height={240}
+            className=" w-[calc(100%/6)] aspect-square object-cover"
+          />
+          <Image
+            src="/images/Footer2.png"
+            alt="f2"
+            width={240}
+            height={240}
+            className=" w-[calc(100%/6)] aspect-square object-cover"
+          />
+          <Image
+            src="/images/Footer3.png"
+            alt="f3"
+            width={240}
+            height={240}
+            className=" w-[calc(100%/6)] aspect-square object-cover"
+          />
+          <Image
+            src="/images/Footer4.png"
+            alt="f4"
+            width={240}
+            height={240}
+            className=" w-[calc(100%/6)] aspect-square object-cover"
+          />
+          <Image
+            src="/images/Footer5.png"
+            alt="f5"
+            width={240}
+            height={240}
+            className=" w-[calc(100%/6)] aspect-square object-cover"
+          />
+          <Image
+            src="/images/Footer6.png"
+            alt="f6"
+            width={240}
+            height={240}
+            className=" w-[calc(100%/6)] aspect-square object-cover"
+          />
         </div>
 
         <div className=" flex justify-between ml-24 mr-24 mt-10 text-lg">
@@ -122,8 +164,8 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <section className=" hidden mt-10 max-w-1170:flex flex-col items-center gap-6">
-        <div className=" flex flex-col gap-2 max-w-[347px]">
+      <section className="  mt-10 min-[880px]:hidden flex flex-col items-center gap-7">
+        <div className=" flex flex-col gap-2 ">
           <p className=" font-medium">
             Регистрируйтесь и получайте приятные бонусы от Riera
           </p>
@@ -132,68 +174,42 @@ export default function Footer() {
             <button>Отправить</button>
           </div>
         </div>
-        <div>
-          <DropdownMenu>
-            <DropdownMenuTrigger className=" flex justify-between">
-              <p className=" text-lg font-medium">О компании</p>
-              {
-                <Image
-                  src="/images/down.png"
-                  alt="more"
-                  width={24}
-                  height={24}
-                />
-              }
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>
-                {" "}
-                <a href="#">О нас</a>
-              </DropdownMenuLabel>
-
-              <DropdownMenuItem>
-                {" "}
-                <a href="#">Котакты</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                {" "}
-                <a href="#">ЧЗВ</a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-        <div>
-          <DropdownMenu>
-            <DropdownMenuTrigger className=" flex justify-between">
-              <p className=" text-lg font-medium">Категории</p>
-              {
-                <Image
-                  src="/images/down.png"
-                  alt="more"
-                  width={24}
-                  height={24}
-                />
-              }
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>
-                {" "}
-                <a href="#">Костюмы</a>
-              </DropdownMenuLabel>
-
-              <DropdownMenuItem>
-                {" "}
-                <a href="#">Пиджаки</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                {" "}
-                <a href="#">Рубашки</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <a href="#">Галстуки</a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+        <div className=" w-full max-w-[1170px] mx-auto px-3  py-3">
+          <div>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>О компании</AccordionTrigger>
+                <AccordionContent>
+                  <a href="#">О нас</a>
+                </AccordionContent>
+                <AccordionContent>
+                  <a href="#">Котакты</a>
+                </AccordionContent>
+                <AccordionContent>
+                  <a href="#">ЧЗВ</a>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+          <div>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Категории</AccordionTrigger>
+                <AccordionContent>
+                  <a href="#">Костюмы</a>
+                </AccordionContent>
+                <AccordionContent>
+                  <a href="#">Пиджаки</a>
+                </AccordionContent>
+                <AccordionContent>
+                  <a href="#">Рубашки</a>
+                </AccordionContent>
+                <AccordionContent>
+                  <a href="#">Галстуки</a>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
         <div>
           <h2 className=" text-center text-[16px] font-semibold">

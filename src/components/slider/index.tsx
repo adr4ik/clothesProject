@@ -42,7 +42,7 @@ export default function ProductsSlider({ products }: { products: IProduct[] }) {
     ],
   };
   return (
-    <div className="slider-container max-w-max">
+    <div className="slider-container max-w-max ">
       <Slider {...settings}>
         {products.map((item) => (
           <ProductCard key={item.id} />

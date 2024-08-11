@@ -33,10 +33,10 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      screens: {
-        "max-w-1170": { max: "1170px" },
-        "max-w-680": { max: "680px" },
-      },
+      // screens: {
+      //   "max-w-1170": { max: "1170px" },
+      //   "max-w-680": { max: "680px" },
+      // },
     },
   },
   plugins: [require("tailwindcss-animate")],
