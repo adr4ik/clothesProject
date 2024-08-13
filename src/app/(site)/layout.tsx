@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
-import "./globals.css";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const raleway = Raleway({
   subsets: ["latin", "cyrillic", "cyrillic-ext", "vietnamese"],
@@ -20,8 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={raleway.className}>{children}</body>
-    </html>
+    <main>
+      <Header />
+
+      {children}
+      <Footer />
+    </main>
   );
 }

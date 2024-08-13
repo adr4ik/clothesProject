@@ -13,7 +13,8 @@ import LogoIcon from "@/lib/icons/logo";
 import RusFlagIcon from "@/lib/icons/rus-flag";
 import CartIcon from "@/lib/icons/cart";
 import Link from "next/link";
-import NotFoundPage from "../notFoundPage";
+
+import { HeaderMenu } from "./menu";
 
 export default function Header() {
   return (
@@ -29,14 +30,9 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <header className=" sticky top-0 z-50">
+      <header className=" bg-white sticky top-0 z-50">
         <div className=" flex justify-between items-center max-w-[1170px] mx-auto px-3 h-[72px]">
-          <nav className=" flex gap-6 font-medium text-sm  max-[870px]:hidden">
-            <Link href="/notFountPage">Категории </Link>
-            <Link href="#">Покупателям</Link>
-            <Link href="#">Бренд</Link>
-            <Link href="/blogPage">Блог</Link>
-          </nav>
+          <HeaderMenu />
           <div className=" min-[870px]:hidden flex">
             {" "}
             <DropdownMenu>

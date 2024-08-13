@@ -9,6 +9,76 @@
       "count": "2",
       "articul": "051",
       "category": "Costium"
+    },
+    {
+      "id": "2",
+      "name": "",
+      "price": "",
+      "material_color": "",
+      "sizes": ["44/176", "46/178"],
+      "count": "2",
+      "articul": "051",
+      "category": "Costium"
+    },
+    {
+      "id": "3",
+      "name": "",
+      "price": "",
+      "material_color": "",
+      "sizes": ["44/176", "46/178"],
+      "count": "2",
+      "articul": "051",
+      "category": "Costium"
+    },
+    {
+      "id": "4",
+      "name": "",
+      "price": "",
+      "material_color": "",
+      "sizes": ["44/176", "46/178"],
+      "count": "2",
+      "articul": "051",
+      "category": "Costium"
+    },
+    {
+      "id": "5",
+      "name": "",
+      "price": "",
+      "material_color": "",
+      "sizes": ["44/176", "46/178"],
+      "count": "2",
+      "articul": "051",
+      "category": "Costium"
+    },
+    {
+      "id": "6",
+      "name": "",
+      "price": "",
+      "material_color": "",
+      "sizes": ["44/176", "46/178"],
+      "count": "2",
+      "articul": "051",
+      "category": "Costium"
+    },
+    {
+      "id": "7",
+      "name": "",
+      "price": "",
+      "material_color": "",
+      "sizes": ["44/176", "46/178"],
+      "count": "2",
+      "articul": "051",
+      "category": "Costium"
+    },
+    {
+      "id": "8",
+      "name": "",
+      "price": "",
+      "material_color": "",
+      "sizes": ["44/176", "46/178"],
+      "count": "2",
+      "articul": "051",
+      "category": "Costium"
     }
   ]
 }

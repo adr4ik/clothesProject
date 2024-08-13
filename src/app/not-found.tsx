@@ -1,17 +1,19 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function NotFoundPage() {
   return (
     <section>
-      <div className=" flex max-[980px]:flex-col">
+      <div className=" flex max-[980px]:flex-col h-screen">
         <div className=" w-full">
           <Image
             src="/images/notfound.png"
             alt="notfound"
             width={695}
             height={592}
-            className=" w-full"
+            className=" w-full h-full"
           />
         </div>
         <div
@@ -27,9 +29,14 @@ export default function NotFoundPage() {
               Мы повсюду искали эту страницу Вы уверены, что URL-адрес сайта
               правильный?
             </h3>
-            <button className=" px-10 py-[14px] text-center bg-white text-sm max-w-[270px]">
-              Вернуться на главную
-            </button>
+            <Link href="/">
+              <Button
+                variant="ghost"
+                className=" px-10 py-[14px] text-center bg-white text-sm max-w-[270px]"
+              >
+                Вернуться на главную
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

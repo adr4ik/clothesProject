@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ProductCard() {
   return (
-    <div className=" m-w-[270px] text-center">
+    <div className=" max-w-[270px] text-center">
       <div>
         <Image
           src="/images/Img.png"
