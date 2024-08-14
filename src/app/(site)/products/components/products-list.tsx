@@ -6,18 +6,22 @@ import { ProductsSelect } from "./select";
 import { BASE_URL } from "@/utils/constants";
 import { IProduct } from "@/utils/interfaces";
 import ProductCard from "@/components/product-card";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function ProductsList() {
   const [products, setProducts] = useState<IProduct[]>([]);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const fetchData = async () => {
+    const res = await fetch(`${BASE_URL}?${searchParams.toString()}`);
+    const data = await res.json();
+    setProducts(data);
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(BASE_URL);
-      const data = await res.json();
-      setProducts(data);
-    };
     fetchData();
-  }, []);
+  }, [searchParams]);
 
   if (!products.length) {
     return <h1>Loading...</h1>;
@@ -32,9 +36,9 @@ export default function ProductsList() {
           <ProductsSelect />
         </div>
       </div>
-      <div className=" flex flex-wrap justify-between gap-2 mt-8">
+      <div className=" flex flex-wrap justify-start gap-2 mt-8">
         {products.map((item) => (
-          <ProductCard />
+          <ProductCard key={item.id} />
         ))}
       </div>
     </div>

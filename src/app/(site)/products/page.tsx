@@ -1,6 +1,7 @@
 import React from "react";
 import Filters from "./components/filters";
 import ProductsList from "./components/products-list";
+import { ProductsPagination } from "./components/pagination";
 
 export default function page() {
   return (
@@ -9,6 +10,7 @@ export default function page() {
         <Filters />
         <ProductsList />
       </div>
+      <ProductsPagination />
     </div>
   );
 }

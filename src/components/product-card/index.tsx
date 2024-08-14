@@ -1,16 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function ProductCard() {
   return (
     <div className=" max-w-[270px] text-center">
       <div>
-        <Image
-          src="/images/Img.png"
-          alt="product image"
-          width={270}
-          height={360}
-        />
+        <Link href="/Detailspage">
+          <Image
+            src="/images/Img.png"
+            alt="product image"
+            width={270}
+            height={360}
+          />
+        </Link>
       </div>
       <div className=" mt-4">
         <p className=" text-lg leading-5 mb-2">

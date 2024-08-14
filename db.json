@@ -3,18 +3,18 @@
     {
       "id": "1",
       "name": "",
-      "price": "",
-      "material_color": "",
+      "price": 9999,
+      "material_color": "Черный",
       "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "051",
-      "category": "Costium"
+      "category": "Хлопок"
     },
     {
       "id": "2",
       "name": "",
-      "price": "",
-      "material_color": "",
+      "price": "150040",
+      "material_color": "Белый",
       "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "051",
@@ -22,8 +22,8 @@
     },
     {
       "id": "3",
-      "name": "",
-      "price": "",
+      "name": "12458",
+      "price": "259034",
       "material_color": "",
       "sizes": ["44/176", "46/178"],
       "count": "2",
@@ -33,7 +33,7 @@
     {
       "id": "4",
       "name": "",
-      "price": "",
+      "price": "9870s",
       "material_color": "",
       "sizes": ["44/176", "46/178"],
       "count": "2",

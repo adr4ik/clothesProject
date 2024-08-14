@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -6,10 +8,28 @@ import {
 } from "@/components/ui/accordion";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useRouter, useSearchParams } from "next/navigation";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Radiogroup() {
+  const [selectedMaterial, setSelectedMaterial] = useState("Хлопок");
+  const [selectedColor, setSelectedColor] = useState("Черный");
+
+  const [selectedPrice, setSelectedPrice] = useState("5 000-10 000");
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    params.set("material_color", selectedColor);
+    params.set("category", selectedMaterial);
+    params.set("price", selectedPrice);
+
+    router.push(`products?${params.toString()}`);
+  }, [selectedColor]);
+
   return (
     <div>
       <div>
@@ -18,6 +38,8 @@ export default function Radiogroup() {
             <AccordionTrigger>Материал</AccordionTrigger>
             <AccordionContent>
               <RadioGroup
+                onValueChange={setSelectedMaterial}
+                value={selectedMaterial}
                 defaultValue="Хлопок"
                 className=" flex flex-col gap-3"
               >
@@ -64,7 +86,9 @@ export default function Radiogroup() {
             <AccordionTrigger>Цвет</AccordionTrigger>
             <AccordionContent>
               <RadioGroup
-                defaultValue="Хлопок"
+                defaultValue="Черный"
+                onValueChange={setSelectedColor}
+                value={selectedColor}
                 className=" flex flex-col gap-3"
               >
                 <div className="flex items-center space-x-2">
@@ -102,24 +126,26 @@ export default function Radiogroup() {
             <AccordionTrigger>Цена</AccordionTrigger>
             <AccordionContent>
               <RadioGroup
+                onValueChange={setSelectedPrice}
+                value={selectedPrice}
                 defaultValue="Хлопок"
                 className=" flex flex-col gap-3"
               >
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="5 000-10 000" id="r14" />
-                  <Label htmlFor="r14">5 000-10 000</Label>
+                  <RadioGroupItem value="5 000-10 000" id="r15" />
+                  <Label htmlFor="r15">5 000-10 000</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="10 000-20 000" id="r14" />
-                  <Label htmlFor="r14">10 000-20 000</Label>
+                  <RadioGroupItem value="10 000-20 000" id="r16" />
+                  <Label htmlFor="r16">10 000-20 000</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="30 000-40 000" id="r14" />
-                  <Label htmlFor="r14">30 000-40 000</Label>
+                  <RadioGroupItem value="30 000-40 000" id="r17" />
+                  <Label htmlFor="r17">30 000-40 000</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="50 000-70 000" id="r14" />
-                  <Label htmlFor="r14">50 000-70 000</Label>
+                  <RadioGroupItem value="50 000-70 000" id="r18" />
+                  <Label htmlFor="r18">50 000-70 000</Label>
                 </div>
               </RadioGroup>
             </AccordionContent>

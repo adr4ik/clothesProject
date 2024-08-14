@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "npx json-server -w db.json -p 8000"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",

@@ -152,7 +152,7 @@ export function HeaderMenu() {
           <NavigationMenuTrigger>Бренд</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className=" flex flex-col ">
-              <ListItem href="/products" title="О нас"></ListItem>
+              <ListItem href="/aboutUs" title="О нас"></ListItem>
               <ListItem href="/docs/installation" title="Контакты"></ListItem>
               <ListItem
                 href="/docs/primitives/typography"
