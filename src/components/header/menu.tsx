@@ -73,7 +73,9 @@ export function HeaderMenu() {
                 />
 
                 <ul>
-                  <ListItem href="/products" title="Костюмы"></ListItem>
+                  <Link href="/products">
+                    <ListItem title="Костюмы"></ListItem>
+                  </Link>
                   <ListItem
                     href="/docs/installation"
                     title="Деловые"
@@ -137,10 +139,7 @@ export function HeaderMenu() {
                 href="/docs/installation"
                 title="Система лояльности"
               ></ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Частые вопросы"
-              ></ListItem>
+              <ListItem href="/answers" title="Частые вопросы"></ListItem>
               <ListItem
                 href="/docs/primitives/typography"
                 title="Подарочные карты"
@@ -151,7 +150,7 @@ export function HeaderMenu() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Бренд</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className=" flex flex-col ">
+            <ul className=" flex flex-col">
               <ListItem href="/aboutUs" title="О нас"></ListItem>
               <ListItem href="/docs/installation" title="Контакты"></ListItem>
               <ListItem

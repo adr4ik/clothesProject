@@ -13,22 +13,23 @@ import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 export default function Radiogroup() {
-  const [selectedMaterial, setSelectedMaterial] = useState("Хлопок");
-  const [selectedColor, setSelectedColor] = useState("Черный");
-
-  const [selectedPrice, setSelectedPrice] = useState("5 000-10 000");
+  const [selectedMaterial, setSelectedMaterial] = useState("r1");
+  const [selectedColor, setSelectedColor] = useState("");
 
   const searchParams = useSearchParams();
   const router = useRouter();
 
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
-    params.set("material_color", selectedColor);
-    params.set("category", selectedMaterial);
-    params.set("price", selectedPrice);
+
+    if (!selectedColor) {
+      params.set("category", selectedMaterial);
+    } else if (!selectedMaterial) {
+      params.set("material_color", selectedColor);
+    }
 
     router.push(`products?${params.toString()}`);
-  }, [selectedColor]);
+  }, [selectedColor, selectedMaterial]);
 
   return (
     <div>
@@ -126,8 +127,6 @@ export default function Radiogroup() {
             <AccordionTrigger>Цена</AccordionTrigger>
             <AccordionContent>
               <RadioGroup
-                onValueChange={setSelectedPrice}
-                value={selectedPrice}
                 defaultValue="Хлопок"
                 className=" flex flex-col gap-3"
               >

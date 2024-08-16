@@ -2,82 +2,98 @@
   "products": [
     {
       "id": "1",
-      "name": "",
-      "price": 9999,
+      "name": "DESIGN Коричневый костюм-скинни в клетку",
+      "price": 68567567567,
+      "old_price": 4564357,
       "material_color": "Черный",
       "sizes": ["44/176", "46/178"],
       "count": "2",
-      "articul": "051",
+      "articul": "",
       "category": "Хлопок"
     },
     {
       "id": "2",
-      "name": "",
-      "price": "150040",
+      "name": " Коричневый в клетку",
+      "price": 46764746,
+      "old_price": 4564357,
+
       "material_color": "Белый",
       "sizes": ["44/176", "46/178"],
       "count": "2",
-      "articul": "051",
+      "articul": "",
       "category": "Costium"
     },
     {
       "id": "3",
-      "name": "12458",
-      "price": "259034",
+      "name": "DESIGN в клетку",
+      "price": 234,
+      "old_price": 4564357,
+
       "material_color": "",
       "sizes": ["44/176", "46/178"],
       "count": "2",
-      "articul": "051",
+      "articul": "",
       "category": "Costium"
     },
     {
       "id": "4",
       "name": "",
-      "price": "9870s",
+      "price": 525324324,
+      "old_price": 4564357,
+
       "material_color": "",
       "sizes": ["44/176", "46/178"],
       "count": "2",
-      "articul": "051",
+      "articul": "",
       "category": "Costium"
     },
     {
       "id": "5",
       "name": "",
-      "price": "",
+      "price": 2342524,
       "material_color": "",
+      "old_price": 4564357,
+
       "sizes": ["44/176", "46/178"],
       "count": "2",
-      "articul": "051",
+      "articul": "45765768",
       "category": "Costium"
     },
     {
       "id": "6",
       "name": "",
-      "price": "",
+      "price": 4534534534,
+      "old_price": 4564357,
+
       "material_color": "",
+
       "sizes": ["44/176", "46/178"],
       "count": "2",
-      "articul": "051",
+      "articul": "",
       "category": "Costium"
     },
     {
       "id": "7",
       "name": "",
-      "price": "",
+      "price": 234234234,
+      "old_price": 4564357,
+
       "material_color": "",
       "sizes": ["44/176", "46/178"],
       "count": "2",
-      "articul": "051",
+      "articul": "",
       "category": "Costium"
     },
     {
       "id": "8",
       "name": "",
-      "price": "",
+      "price": 342342342,
+      "old_price": 4564357,
+
       "material_color": "",
       "sizes": ["44/176", "46/178"],
       "count": "2",
-      "articul": "051",
+      "articul": "braun",
       "category": "Costium"
     }
   ]

@@ -38,7 +38,7 @@ export default function ProductsList() {
       </div>
       <div className=" flex flex-wrap justify-start gap-2 mt-8">
         {products.map((item) => (
-          <ProductCard key={item.id} />
+          <ProductCard key={item.id} product={item} />
         ))}
       </div>
     </div>

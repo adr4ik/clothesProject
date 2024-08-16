@@ -1,7 +1,8 @@
 export interface IProduct {
   id: string;
   name: string;
-  price: string;
+  price: number;
+  old_price: number;
   material_color: string;
   sizes: string[];
   count: string;

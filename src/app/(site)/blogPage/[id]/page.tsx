@@ -7,7 +7,7 @@ import React from "react";
 export default function page() {
   return (
     <section>
-      <nav className=" flex max-w-[1170px] gap-6 h-12 items-center mx-auto px-3  py-3">
+      <nav className=" flex max-w-[1170px] gap-6 h-12 items-center mx-auto px-3  py-3 ">
         <a href="">Главная</a>
         <p>/</p>
         <a href="">Блог</a>
