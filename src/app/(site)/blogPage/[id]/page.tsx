@@ -115,38 +115,40 @@ export default function page() {
             <TwitterIcon />
           </nav>
         </div>
-        <div className=" flex flex-col max-w-[770px] mt-12 gap-5">
-          <div className=" flex justify-between max-[400px]:flex-col gap-3 ">
-            <div className=" w-full flex flex-col gap-3">
-              <h3 className=" font-semibold">Имя</h3>
-              <input
-                placeholder="Введите свое имя"
-                className=" w-full outline-none  text-[#666666] text-sm"
+        <div className=" flex justify-center">
+          <div className=" flex flex-col max-w-[770px] mt-12 gap-5 ">
+            <div className=" flex justify-between max-[400px]:flex-col gap-3 ">
+              <div className=" w-full flex flex-col gap-3">
+                <h3 className=" font-semibold">Имя</h3>
+                <input
+                  placeholder="Введите свое имя"
+                  className=" w-full outline-none text-sm border"
+                />
+              </div>
+              <div className=" w-full flex flex-col gap-3">
+                <h3 className=" font-semibold">Email</h3>
+                <input
+                  placeholder="Введите свой email"
+                  className=" w-full outline-none  text-sm border"
+                />
+              </div>
+            </div>
+            <div className=" flex flex-col gap-3">
+              <h3 className=" font-semibold"> Сообщение</h3>
+              <textarea
+                placeholder="Введи те свое сообщение"
+                className=" w-full outline-none   text-sm h-44 border"
               />
             </div>
-            <div className=" w-full flex flex-col gap-3">
-              <h3 className=" font-semibold">Email</h3>
-              <input
-                placeholder="Введите свой email"
-                className=" w-full outline-none  text-[#666666] text-sm"
-              />
+            <div className=" flex flex-col  text-center mx-auto gap-3">
+              <p className=" text-[#666666] text-sm">
+                Обратите внимание: комментарии должны быть одобрены до их
+                публикации.
+              </p>
+              <button className=" px-10 py-[14px] bg-black text-white text-center max-w-[520px]">
+                Опубликовать
+              </button>
             </div>
-          </div>
-          <div className=" flex flex-col gap-3">
-            <h3 className=" font-semibold"> Сообщение</h3>
-            <textarea
-              placeholder="Введи те свое сообщение"
-              className=" w-full outline-none  text-[#666666] text-sm"
-            />
-          </div>
-          <div className=" flex flex-col  text-center mx-auto gap-3">
-            <p className=" text-[#666666] text-sm">
-              Обратите внимание: комментарии должны быть одобрены до их
-              публикации.
-            </p>
-            <button className=" px-10 py-[14px] bg-black text-white text-center max-w-[520px]">
-              Опубликовать
-            </button>
           </div>
         </div>
       </div>

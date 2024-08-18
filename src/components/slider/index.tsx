@@ -1,15 +1,28 @@
 "use client";
 
 import { IProduct } from "@/utils/interfaces";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import ProductCard from "../product-card";
+import { BASE_URL } from "@/utils/constants";
+import { Skeleton } from "../ui/skeleton";
 
-export default function ProductsSlider({ products }: { products: IProduct[] }) {
+export default function ProductsSlider() {
+  const [products, setProducts] = useState<IProduct[]>([]);
+
+  const fetchData = async () => {
+    const res = await fetch(BASE_URL);
+    const data = await res.json();
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   const settings = {
     dots: true,
     infinite: false,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
@@ -41,11 +54,25 @@ export default function ProductsSlider({ products }: { products: IProduct[] }) {
       },
     ],
   };
+
+  if (!products.length) {
+    return (
+      <div className="slider-container max-w-max ">
+        <Slider {...settings}>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </Slider>
+      </div>
+    );
+  }
+
   return (
     <div className="slider-container max-w-max ">
       <Slider {...settings}>
         {products.map((item) => (
-          <ProductCard key={item.id} />
+          <ProductCard key={item.id} product={item} />
         ))}
       </Slider>
     </div>

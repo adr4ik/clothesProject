@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BASE_URL } from "@/utils/constants";
 import { IProduct } from "@/utils/interfaces";
 import { currencyFormat } from "@/utils/utils";
@@ -39,19 +40,8 @@ const images = [
   },
 ];
 
-const putText =
-  "DESIGN – ваш проводник всех последних тенденций, независимо от того, кто вы, откуда и чем занимаетесь. Эксклюзивно для ASOS, наш универсальный бренд доступен для вас в версиях Plus и Tall. Создано нами, стилизовано вами.";
-const putText2 =
-  "независимо от того, кто вы, откуда и чем занимаетесь. Эксклюзивно для ASOS, наш универсальный бренд доступен для вас в версиях Plus и Tall. Создано нами, стилизовано вами.";
-const putText3 = "Plus и Tall. Создано нами, стилизовано вами.";
-const putText4 = " Создано нами, стилизовано вами.";
-
 export default function DetailsPage({ params }: { params: { id: string } }) {
   const [activeImage, setActiveImage] = useState(images[4]);
-  const [text1, setText1] = useState("");
-  const [text2, setText2] = useState("");
-  const [text3, setText3] = useState("");
-  const [text4, setText4] = useState("");
 
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
@@ -159,25 +149,52 @@ export default function DetailsPage({ params }: { params: { id: string } }) {
         </div>
       </div>
       <nav className=" flex mx-auto justify-between py-10 font-bold px-5 max-w-[890px] max-[610px]:flex-wrap">
-        <Button variant="secondary" onClick={() => setText1(putText)}>
-          Описание
-        </Button>
-        <Button variant="secondary" onClick={() => setText1(putText2)}>
-          Особенности & Детали
-        </Button>
-        <Button variant="secondary" onClick={() => setText1(putText3)}>
-          Доставка & Возврат
-        </Button>
-        <Button variant="secondary" onClick={() => setText1(putText4)}>
-          Отзывы
-        </Button>
+        <Tabs defaultValue="account" className="w-full">
+          <TabsList className="bg-white p-0 h-auto">
+            <TabsTrigger
+              value="Описание"
+              className="data-[state=active]:bg-[#F5F6F8] font-medium text-md px-10 py-3 data-[state=active]:shadow-none rounded-none"
+            >
+              Описание
+            </TabsTrigger>
+            <TabsTrigger
+              value="Особенности"
+              className="data-[state=active]:bg-[#F5F6F8] font-medium text-md px-10 py-3 data-[state=active]:shadow-none rounded-none"
+            >
+              Особенности & Детали
+            </TabsTrigger>
+            <TabsTrigger
+              value="Доставка"
+              className="data-[state=active]:bg-[#F5F6F8] font-medium text-md px-10 py-3 data-[state=active]:shadow-none rounded-none"
+            >
+              Доставка & Возврат
+            </TabsTrigger>
+            <TabsTrigger
+              value="Отзывы"
+              className="data-[state=active]:bg-[#F5F6F8] font-medium text-md px-10 py-3 data-[state=active]:shadow-none rounded-none"
+            >
+              Отзывы
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="Описание" className="bg-[#F5F6F8] mt-0 p-10">
+            DESIGN – ваш проводник всех последних тенденций, независимо от того,
+            кто вы, откуда и чем занимаетесь. Эксклюзивно для ASOS, наш
+            универсальный бренд доступен для вас в версиях Plus и Tall. Создано
+            нами, стилизовано вами.
+          </TabsContent>
+          <TabsContent value="Особенности" className="bg-[#F5F6F8] mt-0 p-10">
+            Change your password here.
+          </TabsContent>
+          <TabsContent value="Доставка " className="bg-[#F5F6F8] mt-0 p-10">
+            Change your password here.
+          </TabsContent>
+
+          <TabsContent value="Отзывы" className="bg-[#F5F6F8] mt-0 p-10">
+            Change your password here.
+          </TabsContent>
+        </Tabs>
       </nav>
-      <div className=" max-w-[890px] mx-auto py-3">
-        <p>{text1}</p>
-        <p>{text2}</p>
-        <p>{text3}</p>
-        <p>{text4}</p>
-      </div>
+
       <div>
         <h2 className=" font-bold text-center text-3xl py-8">Похожие товары</h2>
       </div>
