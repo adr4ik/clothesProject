@@ -1,7 +1,5 @@
 import Blog from "@/components/blog";
-import HomepageLayer2 from "@/components/homepageLayer2";
-import HomepageLayer3 from "@/components/homepageLayer3";
-import HomepageLayer4 from "@/components/homepageLayer4";
+
 import ProductsSlider from "@/components/slider";
 
 import Image from "next/image";

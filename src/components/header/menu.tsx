@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import BlogPage from "@/app/(site)/blogPage/page";
+import AddProducts from "@/app/(site)/products/components/addProduct";
+import { AddProduct } from "@/app/(site)/products/components/addForm";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -133,31 +135,36 @@ export function HeaderMenu() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Покупателям</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className=" flex flex-col ">
-              <ListItem href="/products" title="Оплата и доставка"></ListItem>
-              <ListItem
-                href="/docs/installation"
-                title="Система лояльности"
-              ></ListItem>
-              <ListItem href="/answers" title="Частые вопросы"></ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Подарочные карты"
-              ></ListItem>
-            </ul>
+            <div className=" w-96 flex flex-col items-center">
+              <ul className=" ">
+                <ListItem href="/products" title="Оплата и доставка"></ListItem>
+                <ListItem
+                  href="/docs/installation"
+                  title="Система лояльности"
+                ></ListItem>
+                <ListItem href="/answers" title="Частые вопросы"></ListItem>
+                <ListItem
+                  href="/docs/primitives/typography"
+                  title="Подарочные карты"
+                ></ListItem>
+              </ul>
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Бренд</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className=" flex flex-col">
-              <ListItem href="/aboutUs" title="О нас"></ListItem>
-              <ListItem href="/contacts" title="Контакты"></ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Блог"
-              ></ListItem>
-            </ul>
+            <div className=" flex flex-col w-96 items-center">
+              <ul>
+                <ListItem href="/aboutUs" title="О нас"></ListItem>
+                <ListItem href="/contacts" title="Контакты"></ListItem>
+                <ListItem
+                  href="/docs/primitives/typography"
+                  title="Блог"
+                ></ListItem>
+                <AddProduct />
+              </ul>
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
 

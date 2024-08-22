@@ -17,10 +17,12 @@ export default function page() {
           свяжутся
         </p>
       </div>
+
       <div className=" w-full h-96">
         {" "}
         <MapboxMap />{" "}
       </div>
+
       <div className=" flex justify-center">
         <div className=" flex flex-col max-w-[770px] mt-12 gap-5 ">
           <div className=" flex justify-between max-[400px]:flex-col gap-3 ">
@@ -28,14 +30,14 @@ export default function page() {
               <h3 className=" font-semibold">Имя</h3>
               <input
                 placeholder="Введите свое имя"
-                className=" w-full outline-none   text-sm border"
+                className=" w-full outline-none   text-sm border px-3 py-4"
               />
             </div>
             <div className=" w-full flex flex-col gap-3">
               <h3 className=" font-semibold">Email</h3>
               <input
                 placeholder="Введите свой email"
-                className=" w-full outline-none   text-sm border"
+                className=" w-full outline-none   text-sm border px-3 py-4"
               />
             </div>
           </div>
@@ -43,7 +45,7 @@ export default function page() {
             <h3 className=" font-semibold"> Сообщение</h3>
             <textarea
               placeholder="Введи те свое сообщение"
-              className=" w-full outline-none text-sm h-44 border "
+              className=" w-full outline-none text-sm h-44 border px-3 py-4"
             />
           </div>
           <div className=" flex flex-col  text-center mx-auto gap-3">

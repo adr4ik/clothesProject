@@ -3,34 +3,40 @@
 import * as React from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-// import the mapbox-gl styles so that the map is displayed correctly
+import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css"; // Import the CSS for directions
 
 function MapboxMap() {
-  // this is where the map instance will be stored after initialization
-  const [map, setMap] = React.useState<mapboxgl.Map>();
-
-  // React ref to store a reference to the DOM node that will be used
-  // as a required parameter `container` when initializing the mapbox-gl
-  // will contain `null` by default
-  const mapNode = React.useRef(null);
+  const mapNode = React.useRef<HTMLDivElement>(null);
+  const [map, setMap] = React.useState<mapboxgl.Map | null>(null);
 
   React.useEffect(() => {
     const node = mapNode.current;
-    // if the window object is not found, that means
-    // the component is rendered on the server
-    // or the dom node is not initialized, then return early
     if (typeof window === "undefined" || node === null) return;
 
-    // otherwise, create a map instance
     const mapboxMap = new mapboxgl.Map({
       container: node,
       accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
       style: "mapbox://styles/mapbox/streets-v11",
-      center: [77.069821, 42.625118],
+      center: [37.621168, 55.754298],
       zoom: 11,
     });
 
-    // save the map object to React.useState
+    // Add zoom and rotation controls to the map
+    mapboxMap.addControl(new mapboxgl.NavigationControl());
+
+    // Add directions control to the map
+    const directions = new MapboxDirections({
+      accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
+      unit: "metric", // Use 'imperial' for miles
+      profile: "mapbox/driving", // Can be 'mapbox/walking', 'mapbox/cycling'
+    });
+
+    mapboxMap.addControl(directions, "top-left"); // Position the directions control on the map
+    new mapboxgl.Marker({ color: "red" }) // You can customize the color and other properties
+      .setLngLat([37.621168, 55.754298]) // Set the marker position [longitude, latitude]
+      .addTo(mapboxMap); // Add the marker to the map
+
     setMap(mapboxMap);
 
     return () => {
