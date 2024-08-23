@@ -15,7 +15,7 @@ export default function Cart() {
         <h1 className=" text-5xl font-bold">Моя корзина</h1>
         <p>Товары резервируются на 60 минут.</p>
       </div>
-      <div className=" flex items-center max-[970]:flex-col">
+      <div className=" flex items-center justify-between gap-5 max-md:flex-col">
         <ProductsCartTable />
         <CartEnd />
       </div>

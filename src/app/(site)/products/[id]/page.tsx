@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BASE_URL } from "@/utils/constants";
 import { IProduct } from "@/utils/interfaces";
+import useCart from "@/utils/useCart";
 import { currencyFormat } from "@/utils/utils";
 
 import { useQuery } from "@tanstack/react-query";
@@ -42,6 +43,7 @@ const images = [
 
 export default function DetailsPage({ params }: { params: { id: string } }) {
   const [activeImage, setActiveImage] = useState(images[4]);
+  const { addProductToCart, cart } = useCart();
 
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
@@ -127,7 +129,10 @@ export default function DetailsPage({ params }: { params: { id: string } }) {
             </div>
           </div>
           <div className=" flex flex-col ">
-            <button className=" px-10 py-4 bg-[#2C3453] text-white border ">
+            <button
+              className=" px-10 py-4 bg-[#2C3453] text-white border "
+              onClick={() => addProductToCart(data)}
+            >
               В корзину
             </button>
             <button className=" px-10 py-4 bg-white text-black border">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import More from "../../../public/images/more.png";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,7 +33,7 @@ export default function Header() {
       <header className=" bg-white sticky top-0 z-50">
         <div className=" flex justify-between items-center max-w-[1170px] mx-auto px-3 h-[72px]">
           <HeaderMenu />
-          <div className=" min-[870px]:hidden flex">
+          <div className=" md:hidden flex">
             {" "}
             <DropdownMenu>
               <DropdownMenuTrigger>
@@ -81,9 +81,11 @@ export default function Header() {
               />
             </div>
             <div className=" flex  h-full items-center">
-              <div className=" h-full w-[72px] flex items-center justify-center border-l border-[#EEEEEE] border-r cursor-pointer hover:bg-[#F5F6F8] transition-all">
-                <CartIcon />
-              </div>
+              <Link href="/Cart">
+                <div className=" h-full w-[72px] flex items-center justify-center border-l border-[#EEEEEE] border-r cursor-pointer hover:bg-[#F5F6F8] transition-all">
+                  <CartIcon />
+                </div>
+              </Link>
 
               <div className=" h-full w-[72px] flex items-center justify-center border-r border-[#EEEEEE] cursor-pointer hover:bg-[#F5F6F8] transition-all">
                 <Image

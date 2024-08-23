@@ -44,7 +44,7 @@ export function AddProduct() {
     };
 
     try {
-      const res = await fetch(`${BASE_URL}/products`, {
+      const res = await fetch(`${BASE_URL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

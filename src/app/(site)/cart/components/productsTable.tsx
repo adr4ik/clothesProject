@@ -43,7 +43,7 @@ export function ProductsTable() {
                 Бежевый костюм-жилет скинни с микротекстурой DESIGN
               </span>
             </TableCell>
-            <TableCell>
+            <TableCell className=" w-[105px]">
               <span className=" text-base">23 000P</span>
             </TableCell>
             <TableCell>
@@ -60,30 +60,32 @@ export function ProductsTable() {
                 </Button>
               </div>
             </TableCell>
-            <TableCell>
+            <TableCell className=" w-[105px]">
               <span className=" text-base">40 000</span>
             </TableCell>
           </TableRow>
         </TableBody>
 
         <TableFooter>
-          <TableCell colSpan={5} className=" px-10">
-            <div className=" flex items-center justify-between ">
-              <Button
-                variant="ghost"
-                className=" p-2 h-auto flex items-center gap-x-2"
-              >
-                <RotateCw />
+          <TableRow>
+            <TableCell colSpan={5} className=" px-10">
+              <div className=" flex items-center justify-between ">
+                <Button
+                  variant="ghost"
+                  className=" p-2 h-auto flex items-center gap-x-2"
+                >
+                  <RotateCw />
 
-                <span> Обновить корзину</span>
-              </Button>
+                  <span> Обновить корзину</span>
+                </Button>
 
-              <div className=" flex gap-x-10 items-center">
-                <p className=" text-base ">Общая цена</p>
-                <span className=" text-base font-bold">46 000 ₽</span>
+                <div className=" flex gap-x-10 items-center">
+                  <p className=" text-base ">Общая цена</p>
+                  <span className=" text-base font-bold">46 000 ₽</span>
+                </div>
               </div>
-            </div>
-          </TableCell>
+            </TableCell>
+          </TableRow>
         </TableFooter>
       </Table>
     </div>

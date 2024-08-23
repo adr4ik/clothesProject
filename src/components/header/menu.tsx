@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { Icons } from "@/components/ui/icons";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,12 +12,11 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import BlogPage from "@/app/(site)/blogPage/page";
-import AddProducts from "@/app/(site)/products/components/addProduct";
+
 import { AddProduct } from "@/app/(site)/products/components/addForm";
+import { useRouter } from "next/navigation";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -58,6 +57,7 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export function HeaderMenu() {
+  const router = useRouter();
   return (
     <NavigationMenu className=" max-[870px]:hidden">
       <NavigationMenuList>
@@ -75,9 +75,11 @@ export function HeaderMenu() {
                 />
 
                 <ul>
-                  <Link href="/products">
-                    <ListItem title="Костюмы"></ListItem>
-                  </Link>
+                  <ListItem
+                    title="Костюмы"
+                    onClick={() => router.push("/products")}
+                  ></ListItem>
+
                   <ListItem
                     href="/docs/installation"
                     title="Деловые"
