@@ -13,7 +13,10 @@ export default function ProductCard({ product }: { product?: IProduct }) {
     return <Skeleton className=" w-[270px] h-[360px] " />;
   }
   return (
-    <div className=" max-w-[270px] text-center">
+    <div
+      className=" max-w-[270px] text-center cursor-pointer"
+      onClick={() => router.push(`/products/${product.id}`)}
+    >
       <div>
         <Image
           src="/images/Img.png"
@@ -22,10 +25,7 @@ export default function ProductCard({ product }: { product?: IProduct }) {
           height={360}
         />
       </div>
-      <div
-        className=" mt-4"
-        onClick={() => router.push(`/products/${product.id}`)}
-      >
+      <div className=" mt-4">
         <p className=" text-lg leading-5 mb-2">
           Новейший костюм который можно носить каждый день
         </p>

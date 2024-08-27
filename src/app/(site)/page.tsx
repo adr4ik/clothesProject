@@ -98,7 +98,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <div className=" max-[400px]:order-7">
+      <div className=" max-[400px]:order-7 ">
         <Blog />
       </div>
       <div className=" mt-20 w-full max-[400px]:order-2">

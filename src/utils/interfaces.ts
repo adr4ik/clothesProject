@@ -16,3 +16,14 @@ export interface IBlog {
   date: string;
   name: string;
 }
+
+export interface CartProduct {
+  product: IProduct;
+  count: number;
+  subPrice: number;
+}
+
+export interface Cart {
+  products: CartProduct[];
+  totalPrice: number;
+}

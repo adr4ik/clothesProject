@@ -4,13 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BASE_URL } from "@/utils/constants";
 import { IProduct } from "@/utils/interfaces";
+import useAuth from "@/utils/useAuth";
 import useCart from "@/utils/useCart";
 import { currencyFormat } from "@/utils/utils";
 
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const fetchData = async (id: string): Promise<IProduct> => {
   const res = await fetch(`${BASE_URL}/${id}`);
@@ -43,12 +45,27 @@ const images = [
 
 export default function DetailsPage({ params }: { params: { id: string } }) {
   const [activeImage, setActiveImage] = useState(images[4]);
-  const { addProductToCart, cart } = useCart();
+  const [isInCart, setIsInCart] = useState(false);
+  const { addProductToCart, checkProductInCart, cart } = useCart();
+
+  const { authListener, user } = useAuth();
+
+  useEffect(() => {
+    authListener();
+  }, []);
+
+  const router = useRouter();
 
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: () => fetchData(params.id),
   });
+
+  useEffect(() => {
+    if (data) {
+      setIsInCart(checkProductInCart(data));
+    }
+  }, [data]);
 
   if (isLoading || !data) {
     return <h1>Loading ...</h1>;
@@ -87,7 +104,7 @@ export default function DetailsPage({ params }: { params: { id: string } }) {
             />
           </div>
         </div>
-        <div className=" flex flex-col justify-between max-w-430px">
+        <div className=" flex flex-col justify-between w-1/2 max-[630px]:w-full ">
           <div className=" font-semibold text-2xl flex flex-col gap-5">
             <h2>{data.name} </h2>
             <p>{currencyFormat.format(data.price)}</p>
@@ -131,10 +148,22 @@ export default function DetailsPage({ params }: { params: { id: string } }) {
           <div className=" flex flex-col ">
             <button
               className=" px-10 py-4 bg-[#2C3453] text-white border "
-              onClick={() => addProductToCart(data)}
+              onClick={() => {
+                addProductToCart(data);
+                setIsInCart(checkProductInCart(data));
+              }}
             >
-              В корзину
+              {isInCart ? "Удалить с корзины" : "В корзину"}
             </button>
+
+            {user?.admin && (
+              <button
+                className=" px-10 py-4 bg-white text-black border"
+                onClick={() => router.push(`/editProduct?id=${data.id}`)}
+              >
+                Редактировать
+              </button>
+            )}
             <button className=" px-10 py-4 bg-white text-black border">
               Купить сразу
             </button>

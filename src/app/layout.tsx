@@ -5,6 +5,7 @@ import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ReactQueryProvider from "@/utils/provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const raleway = Raleway({
   subsets: ["latin", "cyrillic", "cyrillic-ext", "vietnamese"],
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={raleway.className}>
         <ReactQueryProvider>{children}</ReactQueryProvider>
+        <Toaster expand position="bottom-right" richColors />
       </body>
     </html>
   );

@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 
-import { AddProduct } from "@/app/(site)/products/components/addForm";
 import { useRouter } from "next/navigation";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -78,6 +77,7 @@ export function HeaderMenu() {
                   <ListItem
                     title="Костюмы"
                     onClick={() => router.push("/products")}
+                    className=" cursor-pointer"
                   ></ListItem>
 
                   <ListItem
@@ -164,7 +164,6 @@ export function HeaderMenu() {
                   href="/docs/primitives/typography"
                   title="Блог"
                 ></ListItem>
-                <AddProduct />
               </ul>
             </div>
           </NavigationMenuContent>

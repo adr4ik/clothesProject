@@ -3,10 +3,13 @@
     {
       "id": "1",
       "name": "DESIGN Коричневый костюм-скинни в клетку",
-      "price": 68567567567,
-      "old_price": 4564357,
+      "price": 20000,
+      "old_price": 20000,
       "material_color": "Черный",
-      "sizes": ["44/176", "46/178"],
+      "sizes": [
+        "44/176",
+        "46/178"
+      ],
       "count": "2",
       "articul": "",
       "category": "Хлопок"
@@ -14,11 +17,13 @@
     {
       "id": "2",
       "name": " Коричневый в клетку",
-      "price": 46764746,
-      "old_price": 4564357,
-
+      "price": 20000,
+      "old_price": 20000,
       "material_color": "Белый",
-      "sizes": ["44/176", "46/178"],
+      "sizes": [
+        "44/176",
+        "46/178"
+      ],
       "count": "2",
       "articul": "",
       "category": "Costium"
@@ -26,11 +31,13 @@
     {
       "id": "3",
       "name": "DESIGN в клетку",
-      "price": 234,
-      "old_price": 4564357,
-
+      "price": 20000,
+      "old_price": 20000,
       "material_color": "",
-      "sizes": ["44/176", "46/178"],
+      "sizes": [
+        "44/176",
+        "46/178"
+      ],
       "count": "2",
       "articul": "",
       "category": "Costium"
@@ -38,11 +45,13 @@
     {
       "id": "4",
       "name": "",
-      "price": 525324324,
-      "old_price": 4564357,
-
+      "price": 20000,
+      "old_price": 20000,
       "material_color": "",
-      "sizes": ["44/176", "46/178"],
+      "sizes": [
+        "44/176",
+        "46/178"
+      ],
       "count": "2",
       "articul": "",
       "category": "Costium"
@@ -50,11 +59,13 @@
     {
       "id": "5",
       "name": "",
-      "price": 2342524,
+      "price": 20000,
       "material_color": "",
-      "old_price": 4564357,
-
-      "sizes": ["44/176", "46/178"],
+      "old_price": 20000,
+      "sizes": [
+        "44/176",
+        "46/178"
+      ],
       "count": "2",
       "articul": "45765768",
       "category": "Costium"
@@ -62,12 +73,13 @@
     {
       "id": "6",
       "name": "",
-      "price": 4534534534,
-      "old_price": 4564357,
-
+      "price": 20000,
+      "old_price": 20000,
       "material_color": "",
-
-      "sizes": ["44/176", "46/178"],
+      "sizes": [
+        "44/176",
+        "46/178"
+      ],
       "count": "2",
       "articul": "",
       "category": "Costium"
@@ -75,11 +87,13 @@
     {
       "id": "7",
       "name": "",
-      "price": 234234234,
-      "old_price": 4564357,
-
+      "price": 20000,
+      "old_price": 20000,
       "material_color": "",
-      "sizes": ["44/176", "46/178"],
+      "sizes": [
+        "44/176",
+        "46/178"
+      ],
       "count": "2",
       "articul": "",
       "category": "Costium"
@@ -87,14 +101,30 @@
     {
       "id": "8",
       "name": "",
-      "price": 342342342,
-      "old_price": 4564357,
-
+      "price": 20000,
+      "old_price": 20000,
       "material_color": "",
-      "sizes": ["44/176", "46/178"],
+      "sizes": [
+        "44/176",
+        "46/178"
+      ],
       "count": "2",
       "articul": "braun",
       "category": "Costium"
+    },
+    {
+      "name": "aburgene",
+      "price": 24000,
+      "old_price": 3434,
+      "material_color": "sdas",
+      "sizes": [
+        "432",
+        "4234"
+      ],
+      "count": 43,
+      "articul": "asd",
+      "category": "adsd",
+      "id": "0OA2hs0"
     }
   ]
 }

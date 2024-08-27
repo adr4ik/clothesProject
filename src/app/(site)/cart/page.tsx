@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CartEnd, ProductsCartTable } from "./components";
 import ProductsSlider from "@/components/slider";
 import Link from "next/link";

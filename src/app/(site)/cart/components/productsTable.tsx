@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -9,11 +11,24 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import CloseIcon from "@/lib/icons/close";
+import { Cart } from "@/utils/interfaces";
+import useCart from "@/utils/useCart";
+import { currencyFormat } from "@/utils/utils";
 import { Minus, Plus, RotateCw } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
 export function ProductsTable() {
+  const { changeCartProductCount, deleteCartProduct, getCart, cart } =
+    useCart();
+
+  useEffect(() => {
+    getCart();
+  }, []);
+
+  if (!cart.products.length) {
+    return <h1>Корзина пуста</h1>;
+  }
   return (
     <div className=" max-w-[753px] ">
       <Table className=" relative ">
@@ -27,43 +42,65 @@ export function ProductsTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell className=" flex items-center gap-x-2 px-10 ">
-              <Button variant="ghost" className=" p-2 h-auto absolute left-1">
-                <CloseIcon />
-              </Button>
-              <Image
-                src="/images/braun/1.png"
-                alt="product image"
-                width={100}
-                height={133}
-              />
-              <span className=" text-base max-w-44">
-                {" "}
-                Бежевый костюм-жилет скинни с микротекстурой DESIGN
-              </span>
-            </TableCell>
-            <TableCell className=" w-[105px]">
-              <span className=" text-base">23 000P</span>
-            </TableCell>
-            <TableCell>
-              <span className="text-base">44-176</span>
-            </TableCell>
-            <TableCell>
-              <div className=" flex items-center gap-x-2">
-                <Button variant="ghost" className=" p-1 h-auto">
-                  <Minus />
+          {cart.products.map((item) => (
+            <TableRow key={item.product.id}>
+              <TableCell className=" flex items-center gap-x-2 px-10 ">
+                <Button
+                  variant="ghost"
+                  className=" p-2 h-auto absolute left-1"
+                  onClick={() => deleteCartProduct(item.product.id)}
+                >
+                  <CloseIcon />
                 </Button>
-                <span className=" text-base font-bold">1</span>
-                <Button variant="ghost" className=" p-1 h-auto">
-                  <Plus />
-                </Button>
-              </div>
-            </TableCell>
-            <TableCell className=" w-[105px]">
-              <span className=" text-base">40 000</span>
-            </TableCell>
-          </TableRow>
+                <Image
+                  src="/images/braun/1.png"
+                  alt="product image"
+                  width={100}
+                  height={133}
+                />
+                <span className=" text-base max-w-44">
+                  {" "}
+                  {item.product.name}
+                </span>
+              </TableCell>
+              <TableCell className=" w-[105px]">
+                <span className=" text-base">
+                  {currencyFormat.format(item.product.price)}
+                </span>
+              </TableCell>
+              <TableCell>
+                <span className="text-base">{item.product.sizes[0]}</span>
+              </TableCell>
+              <TableCell>
+                <div className=" flex items-center gap-x-2">
+                  <Button
+                    variant="ghost"
+                    className=" p-1 h-auto"
+                    onClick={() =>
+                      changeCartProductCount(item.count - 1, item.product.id)
+                    }
+                  >
+                    <Minus />
+                  </Button>
+                  <span className=" text-base font-bold">{item.count}</span>
+                  <Button
+                    variant="ghost"
+                    className=" p-1 h-auto"
+                    onClick={() =>
+                      changeCartProductCount(item.count + 1, item.product.id)
+                    }
+                  >
+                    <Plus />
+                  </Button>
+                </div>
+              </TableCell>
+              <TableCell className=" w-[105px]">
+                <span className=" text-base">
+                  {currencyFormat.format(item.subPrice)}
+                </span>
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
 
         <TableFooter>
@@ -81,7 +118,9 @@ export function ProductsTable() {
 
                 <div className=" flex gap-x-10 items-center">
                   <p className=" text-base ">Общая цена</p>
-                  <span className=" text-base font-bold">46 000 ₽</span>
+                  <span className=" text-base font-bold">
+                    {currencyFormat.format(cart.totalPrice)}₽
+                  </span>
                 </div>
               </div>
             </TableCell>

@@ -14,7 +14,8 @@ import RusFlagIcon from "@/lib/icons/rus-flag";
 import CartIcon from "@/lib/icons/cart";
 import Link from "next/link";
 
-import { HeaderMenu } from "./menu";
+import { HeaderMenu } from "./components/menu";
+import { AuthDropDownMenu } from "./components/auth-menu";
 
 export default function Header() {
   return (
@@ -81,19 +82,14 @@ export default function Header() {
               />
             </div>
             <div className=" flex  h-full items-center">
-              <Link href="/Cart">
+              <Link href="/cart" className=" h-full">
                 <div className=" h-full w-[72px] flex items-center justify-center border-l border-[#EEEEEE] border-r cursor-pointer hover:bg-[#F5F6F8] transition-all">
                   <CartIcon />
                 </div>
               </Link>
 
               <div className=" h-full w-[72px] flex items-center justify-center border-r border-[#EEEEEE] cursor-pointer hover:bg-[#F5F6F8] transition-all">
-                <Image
-                  src="/images/human.png"
-                  alt="icon"
-                  width={24}
-                  height={24}
-                />
+                <AuthDropDownMenu />
               </div>
             </div>
           </div>

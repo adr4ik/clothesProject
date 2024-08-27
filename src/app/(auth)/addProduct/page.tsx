@@ -2,21 +2,13 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { DialogFooter } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { BASE_URL } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 
-export function AddProduct() {
+export default function AddProductPage() {
   // Form state
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -68,6 +60,7 @@ export function AddProduct() {
     } catch (error) {
       console.error("Error adding product", error);
     }
+    router.push("/products");
   };
 
   const handleSizeChange = (index: number, value: string) => {
@@ -81,17 +74,10 @@ export function AddProduct() {
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Add Product</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Add Product</DialogTitle>
-          <DialogDescription>
-            Enter the details for the new product. Click save when you're done.
-          </DialogDescription>
-        </DialogHeader>
+    <main className="  bg-[#F5F6F8] h-screen flex items-center">
+      <div className=" w-[480px] mx-auto bg-white p-10 ">
+        <h1 className=" text-center font-bold text-lg">Add Product</h1>
+
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
@@ -198,7 +184,7 @@ export function AddProduct() {
             <Button type="submit">Add Product</Button>
           </DialogFooter>
         </form>
-      </DialogContent>
-    </Dialog>
+      </div>
+    </main>
   );
 }
