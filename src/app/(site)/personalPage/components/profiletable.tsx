@@ -77,7 +77,7 @@ export function ProfileTable() {
         </TableHeader>
         <TableBody>
           {invoices.map((invoice) => (
-            <TableRow>
+            <TableRow key={invoice.invoice}>
               <TableCell className="font-medium">{invoice.invoice}</TableCell>
               <TableCell>{invoice.date}</TableCell>
               <TableCell>{invoice.quantity}</TableCell>

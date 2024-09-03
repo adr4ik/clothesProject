@@ -18,13 +18,18 @@ export default function Filters() {
   }
 
   return (
-    <aside className=" w-[15%] flex flex-col gap-10">
-      <div>
+    <aside className=" w-[15%] flex flex-col gap-10 ">
+      <div className=" max-[430px]:hidden">
         <h1 className=" text-3xl font-bold">Filters</h1>
       </div>
       <div className=" flex flex-col gap-3">
         <Radiogroup />
-        <Button onClick={resetFilters}>Reset filters</Button>
+        <Button
+          onClick={resetFilters}
+          className=" max-[430px]:text-sm max-[430px]:py-10 "
+        >
+          Reset <br className="min-[430px]:hidden" /> filters
+        </Button>
       </div>
     </aside>
   );

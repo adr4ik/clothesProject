@@ -1,19 +1,34 @@
 import fire from "@/fire";
 import { error } from "console";
 import { sign } from "crypto";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 
-type User = { user: null | object; admin: boolean } | null;
+type User = {
+  user: null | {
+    email: string | null;
+    displayName: string | null;
+    photoURL: string | null;
+  };
+  admin: boolean;
+} | null;
 
 export default function useAuth() {
   const [user, setUser] = useState<User>(null);
+  const [isloading, setIsLoading] = useState(false);
 
   async function login(email: string, password: string) {
+    setIsLoading(true);
     return fire
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then((res) => res)
-      .catch((error) => error);
+      .then((res) => {
+        setIsLoading(false);
+        return res;
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        return error;
+      });
   }
 
   async function signup(
@@ -22,18 +37,23 @@ export default function useAuth() {
     firstName: string,
     lastName: string
   ) {
+    setIsLoading(true);
     return fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(async (res) => {
         if (res.user) {
+          setIsLoading(false);
           await res.user.updateProfile({
             displayName: `${firstName} ${lastName}`,
           });
         }
         return res;
       })
-      .catch((error) => error);
+      .catch((error) => {
+        setIsLoading(false);
+        return error;
+      });
   }
 
   async function logOut() {
@@ -44,7 +64,14 @@ export default function useAuth() {
     const unsubscribe = fire.auth().onAuthStateChanged((user) => {
       if (user) {
         const isAdmin = user.email === "admin888@gmail.com";
-        setUser({ user: user, admin: isAdmin });
+        setUser({
+          user: {
+            email: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          },
+          admin: isAdmin,
+        });
       } else {
         setUser({ user: null, admin: false });
       }
@@ -53,5 +80,5 @@ export default function useAuth() {
     return () => unsubscribe();
   }
 
-  return { login, signup, logOut, authListener, user };
+  return { login, signup, logOut, authListener, user, isloading };
 }

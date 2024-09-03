@@ -29,10 +29,10 @@ export default function ProductsList() {
 
   return (
     <div className="w-[75%]">
-      <div className=" flex gap-3 justify-between">
-        <h1 className=" text-3xl font-bold">Костюмы</h1>
+      <div className=" flex gap-3 justify-between max-[430px]:flex-col">
+        <h1 className=" text-3xl font-bold max-[430]: text-center">Костюмы</h1>
         <div className=" flex items-center gap-3">
-          <p>Сортировать</p>
+          <p className=" max-[430px]:hidden">Сортировать</p>
           <ProductsSelect />
         </div>
       </div>

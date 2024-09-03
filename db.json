@@ -6,10 +6,7 @@
       "price": 20000,
       "old_price": 20000,
       "material_color": "Черный",
-      "sizes": [
-        "44/176",
-        "46/178"
-      ],
+      "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "",
       "category": "Хлопок"
@@ -20,10 +17,7 @@
       "price": 20000,
       "old_price": 20000,
       "material_color": "Белый",
-      "sizes": [
-        "44/176",
-        "46/178"
-      ],
+      "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "",
       "category": "Costium"
@@ -34,38 +28,29 @@
       "price": 20000,
       "old_price": 20000,
       "material_color": "",
-      "sizes": [
-        "44/176",
-        "46/178"
-      ],
+      "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "",
       "category": "Costium"
     },
     {
       "id": "4",
-      "name": "",
+      "name": "jason",
       "price": 20000,
       "old_price": 20000,
       "material_color": "",
-      "sizes": [
-        "44/176",
-        "46/178"
-      ],
+      "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "",
       "category": "Costium"
     },
     {
       "id": "5",
-      "name": "",
+      "name": "bob",
       "price": 20000,
       "material_color": "",
       "old_price": 20000,
-      "sizes": [
-        "44/176",
-        "46/178"
-      ],
+      "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "45765768",
       "category": "Costium"
@@ -76,10 +61,7 @@
       "price": 20000,
       "old_price": 20000,
       "material_color": "",
-      "sizes": [
-        "44/176",
-        "46/178"
-      ],
+      "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "",
       "category": "Costium"
@@ -90,10 +72,7 @@
       "price": 20000,
       "old_price": 20000,
       "material_color": "",
-      "sizes": [
-        "44/176",
-        "46/178"
-      ],
+      "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "",
       "category": "Costium"
@@ -104,10 +83,7 @@
       "price": 20000,
       "old_price": 20000,
       "material_color": "",
-      "sizes": [
-        "44/176",
-        "46/178"
-      ],
+      "sizes": ["44/176", "46/178"],
       "count": "2",
       "articul": "braun",
       "category": "Costium"
@@ -117,14 +93,67 @@
       "price": 24000,
       "old_price": 3434,
       "material_color": "sdas",
-      "sizes": [
-        "432",
-        "4234"
-      ],
+      "sizes": ["432", "4234"],
       "count": 43,
       "articul": "asd",
       "category": "adsd",
       "id": "0OA2hs0"
+    }
+  ],
+  "BlogProducts": [
+    {
+      "id": "1",
+      "name": "Брюки с защипами",
+      "image": "/images/blog/Img1.png",
+      "date": "Май 15, 2020"
+    },
+    {
+      "id": "2",
+      "name": "Стильная мужская одежда на весну: Что выбрать?",
+      "image": "/images/blog/Img2.png",
+      "date": "Май 15, 2020"
+    },
+    {
+      "id": "3",
+      "name": "Исскуство выбора обуви",
+      "image": "/images/blog/Img3.png",
+      "date": "Май 15, 2020"
+    },
+    {
+      "id": "4",
+      "name": "Как стилизовать одежду",
+      "image": "/images/blog/Img4.png",
+      "date": "Май 15, 2020"
+    },
+    {
+      "id": "5",
+      "name": "Можно ли постоянно носить спортивную обувь?",
+      "image": "/images/blog/Img5.png",
+      "date": "Май 15, 2020"
+    },
+    {
+      "id": "6",
+      "name": "Какие аксессуры носить с пальто",
+      "image": "/images/blog/Img6.png",
+      "date": "Май 15, 2020"
+    },
+    {
+      "id": "7",
+      "name": "Как носить джемпер?",
+      "image": "/images/blog/Img7.png",
+      "date": "Май 15, 2020"
+    },
+    {
+      "id": "8",
+      "name": "5 правил при выборе мужского ремня",
+      "image": "/images/blog/Img8.png",
+      "date": "Май 15, 2020"
+    },
+    {
+      "id": "9",
+      "name": "Уход за зимней обувью",
+      "image": "/images/blog/Img9.png",
+      "date": "Май 15, 2020"
     }
   ]
 }

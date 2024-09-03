@@ -9,8 +9,10 @@ export function CartConfirm() {
   return (
     <div className="w-[400px] py-[30px] px-[35px] shadow-sm">
       <div>
-        <h3 className="mb-8 font-bold text-lg">Общая корзина</h3>
-        <div className="flex items-center justify-between">
+        <h3 className="mb-8 font-bold text-lg max-md:text-center">
+          Общая корзина
+        </h3>
+        <div className="flex items-center justify-between max-md:justify-around">
           <p className="font-bold text-base">Цена корзины</p>
           <span className="font-bold text-lg">300₽</span>
         </div>
@@ -18,10 +20,10 @@ export function CartConfirm() {
 
       <Separator className="my-4" />
 
-      <div className="flex justify-between">
+      <div className="flex  max-md: justify-around">
         <p className="font-bold text-base">Доставка</p>
         <RadioGroup defaultValue="Хлопок" className=" flex flex-col gap-3">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2  ">
             <RadioGroupItem value="Хлопок" id="r1" />
             <Label htmlFor="r1">Фиксированная доставка</Label>
           </div>
@@ -38,9 +40,9 @@ export function CartConfirm() {
 
       <Separator />
 
-      <div className=" flex items-center justify-between">
-        <p className="font-bold text-base">Итог</p>
-        <span className="font-bold text-2xl">400₽</span>
+      <div className=" flex items-center justify-between max-md:justify-around">
+        <p className="font-bold text-base max-md:text-sm">Итог</p>
+        <span className="font-bold text-2xl max-md:text-lg">400₽</span>
       </div>
       <Button
         variant="ghost"

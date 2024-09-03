@@ -80,8 +80,9 @@ export default function DetailsPage({ params }: { params: { id: string } }) {
       <div className=" flex max-[630px]:flex-col">
         <div className=" flex ">
           <div className=" flex flex-col gap-y-3 ">
-            {images.map((image) => (
+            {images.map((image, i) => (
               <Image
+                key={i}
                 src={image.src}
                 alt="1"
                 width={70}
@@ -130,8 +131,11 @@ export default function DetailsPage({ params }: { params: { id: string } }) {
             </div>
             <div className=" flex gap-3">
               {data.sizes.length &&
-                data.sizes.map((size) => (
-                  <button className=" bg-white px-4 py-1 flex flex-col font-semibold border ">
+                data.sizes.map((size, i) => (
+                  <button
+                    key={i}
+                    className=" bg-white px-4 py-1 flex flex-col font-semibold border "
+                  >
                     <span className=" text-[#666666]">{size}</span>
                   </button>
                 ))}
@@ -182,9 +186,9 @@ export default function DetailsPage({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-      <nav className=" flex mx-auto justify-between py-10 font-bold px-5 max-w-[890px] max-[610px]:flex-wrap">
-        <Tabs defaultValue="account" className="w-full">
-          <TabsList className="bg-white p-0 h-auto">
+      <nav className=" flex mx-auto justify-between py-10 font-bold px-5 ">
+        <Tabs defaultValue="account">
+          <TabsList className="bg-white p-0 h-auto flex flex-wrap ">
             <TabsTrigger
               value="Описание"
               className="data-[state=active]:bg-[#F5F6F8] font-medium text-md px-10 py-3 data-[state=active]:shadow-none rounded-none"

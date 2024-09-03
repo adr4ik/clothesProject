@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   DropdownMenu,
@@ -16,6 +18,9 @@ import Link from "next/link";
 
 import { HeaderMenu } from "./components/menu";
 import { AuthDropDownMenu } from "./components/auth-menu";
+import Search from "./components/search";
+import HeaderSearch from "./components/search";
+import { useSearchParams } from "next/navigation";
 
 export default function Header() {
   return (
@@ -68,18 +73,14 @@ export default function Header() {
             </div>
           </div>
           <div className=" flex items-center h-full">
-            <div className=" flex items-center max-[530px]:hidden border-l border-[#EEEEEE] pl-4">
+            <div className=" flex items-center max-[530px]:hidden border-l border-[#EEEEEE] pl-4 relative">
               <Image
                 src="/images/search.png"
                 alt="search"
                 width={18}
                 height={18}
               />
-              <input
-                type="text"
-                placeholder="Search..."
-                className=" text-lg h-full outline-none px-4"
-              />
+              <HeaderSearch />
             </div>
             <div className=" flex  h-full items-center">
               <Link href="/cart" className=" h-full">

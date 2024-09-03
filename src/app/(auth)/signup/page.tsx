@@ -1,5 +1,6 @@
 "use client";
 
+import GoogleAuth from "@/components/auth-google-btn";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -17,7 +18,7 @@ export default function page() {
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastname] = useState("");
 
-  const { signup } = useAuth();
+  const { signup, isloading } = useAuth();
 
   const router = useRouter();
 
@@ -40,14 +41,7 @@ export default function page() {
         <div className=" flex flex-col gap-4 ">
           <h2 className=" text-3xl font-bold p-3 text-center">Sign Up</h2>
 
-          <Button
-            variant="ghost"
-            className=" flex justify-center items-center gap-3 rounded-none border border-gray-200"
-          >
-            <GoogleIcon />
-
-            <p className=" font-bold tracking-[2px]">Продолжить через Google</p>
-          </Button>
+          <GoogleAuth />
         </div>
         <form onSubmit={handleSignUp}>
           <div className=" flex items-center justify-center">
@@ -135,6 +129,7 @@ export default function page() {
               className=" bg-[#2C3453] w-full text-white text-center mt-4"
               type="submit"
             >
+              {isloading ? "Loading" : "Entered"}
               Sign Up
             </Button>
           </div>

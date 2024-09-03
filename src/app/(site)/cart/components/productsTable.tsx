@@ -32,7 +32,7 @@ export function ProductsTable() {
   return (
     <div className=" max-w-[753px] ">
       <Table className=" relative ">
-        <TableHeader>
+        <TableHeader className=" max-md:hidden">
           <TableRow>
             <TableHead className=" text-base p-10">Товар</TableHead>
             <TableHead className=" text-base">Цена</TableHead>
@@ -43,7 +43,10 @@ export function ProductsTable() {
         </TableHeader>
         <TableBody>
           {cart.products.map((item) => (
-            <TableRow key={item.product.id}>
+            <TableRow
+              key={item.product.id}
+              className=" max-md:flex flex-col items-center"
+            >
               <TableCell className=" flex items-center gap-x-2 px-10 ">
                 <Button
                   variant="ghost"
@@ -105,8 +108,8 @@ export function ProductsTable() {
 
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={5} className=" px-10">
-              <div className=" flex items-center justify-between ">
+            <TableCell colSpan={5} className=" px-10 ">
+              <div className=" flex items-center justify-between max-md:flex flex-col ">
                 <Button
                   variant="ghost"
                   className=" p-2 h-auto flex items-center gap-x-2"

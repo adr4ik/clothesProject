@@ -3,6 +3,7 @@ import Blog from "@/components/blog";
 import ProductsSlider from "@/components/slider";
 
 import Image from "next/image";
+import BlogSlider from "./blogPage/components/blogSlider";
 
 export default function Home() {
   return (
@@ -99,7 +100,14 @@ export default function Home() {
         </section>
       </div>
       <div className=" max-[400px]:order-7 ">
-        <Blog />
+        <div className=" flex flex-col gap-7 ml-24 mr-24">
+          <div>
+            <h2 className=" text-3xl font-medium text-center">Блог</h2>
+          </div>
+          <div>
+            <BlogSlider />
+          </div>
+        </div>
       </div>
       <div className=" mt-20 w-full max-[400px]:order-2">
         <section className=" flex mt-5 items-center justify-center max-[400px]:flex-col ">

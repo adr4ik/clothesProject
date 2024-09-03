@@ -65,13 +65,16 @@ export function AuthDropDownMenu() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
+
+        {user?.user && <DropdownMenuSeparator />}
         <DropdownMenuGroup>
-          <DropdownMenuItem onClick={() => router.push("/personalPage")}>
-            <User className="mr-2 h-4 w-4" />
-            <span>Profile</span>
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          {user?.user && (
+            <DropdownMenuItem onClick={() => router.push("/personalPage")}>
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          )}
 
           {user?.admin && (
             <DropdownMenuItem onClick={() => router.push("/addProduct")}>
